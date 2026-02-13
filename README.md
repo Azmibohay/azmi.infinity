@@ -1,1 +1,697 @@
-# azmi.infinity
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>RagilRent • Sewa Akun Free Fire Premium</title>
+    <!-- Font Inter biar premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafd;
+            color: #1a2a3a;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #e9ecf0;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 28px;
+            letter-spacing: -0.5px;
+            color: #0a1c2f;
+        }
+
+        .brand span {
+            background: #d43f34;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 14px;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: flex;
+            gap: 24px;
+            color: #4a5c6e;
+            font-weight: 500;
+        }
+
+        /* FILTER SECTION */
+        .filter-section {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+            border: 1px solid #edf0f5;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            border-radius: 40px;
+            border: 1.5px solid #e2e8f0;
+            background: white;
+            font-weight: 600;
+            color: #3a4e62;
+            cursor: pointer;
+            transition: 0.15s;
+        }
+
+        .filter-btn.active {
+            background: #1e4a76;
+            color: white;
+            border-color: #1e4a76;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 12px 20px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 40px;
+            width: 260px;
+            font-size: 15px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #1e4a76;
+        }
+
+        /* GRID LIST AKUN FREE FIRE */
+        .account-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 28px;
+            margin-bottom: 48px;
+        }
+
+        .account-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.04);
+            border: 1px solid #f0f3f7;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .account-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px -10px rgba(30,74,118,0.12);
+            border-color: #cbd5e1;
+        }
+
+        .account-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: #ffbb00;
+            color: #1e2a3a;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 13px;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .account-badge.premium {
+            background: #d43f34;
+            color: white;
+        }
+
+        .account-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(145deg, #1e2e44, #0f1a26);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .account-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .account-image .default-avatar {
+            font-size: 80px;
+            color: rgba(255,255,255,0.2);
+            text-shadow: 0 0 20px rgba(255,215,0,0.3);
+        }
+
+        .account-level {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .account-details {
+            padding: 22px 20px 24px;
+        }
+
+        .account-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .account-name {
+            font-weight: 700;
+            font-size: 20px;
+            color: #0a1e2c;
+        }
+
+        .account-verified {
+            color: #1e88e5;
+            background: #e3f2fd;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .account-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .spec-item {
+            background: #f8fafc;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #2c4c6e;
+            border: 1px solid #e6edf4;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .spec-item i {
+            font-size: 16px;
+        }
+
+        .price-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .price {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-label {
+            font-size: 13px;
+            color: #62778b;
+            margin-bottom: 4px;
+        }
+
+        .price-value {
+            font-weight: 800;
+            font-size: 26px;
+            color: #1e4a76;
+            letter-spacing: -0.5px;
+        }
+
+        .price-value small {
+            font-size: 14px;
+            font-weight: 600;
+            color: #62778b;
+        }
+
+        .btn-sewa {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: 0.15s;
+            border-bottom: 4px solid #128C7E;
+            text-decoration: none;
+        }
+
+        .btn-sewa:hover {
+            background: #20bd59;
+            transform: scale(1.02);
+        }
+
+        .btn-sewa i {
+            font-size: 20px;
+        }
+
+        /* INSTRUKSI */
+        .how-it-works {
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            margin-top: 40px;
+            border: 1px solid #ecf0f5;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            background: #1e4a76;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 24px;
+            margin: 0 auto 20px;
+        }
+
+        .step h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #0a1e2c;
+        }
+
+        .step p {
+            color: #546e7a;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 60px;
+            padding: 30px 0;
+            border-top: 1px solid #e9ecf0;
+            display: flex;
+            justify-content: space-between;
+            color: #5a6e7e;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .account-grid {
+                grid-template-columns: 1fr;
+            }
+            .how-it-works {
+                grid-template-columns: 1fr;
+            }
+            .filter-section {
+                flex-direction: column;
+            }
+            .search-input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="brand">
+                ⚡ RagilRent <span>Sewa Akun FF</span>
+            </div>
+            <div class="stats">
+                <div>📊 187+ Akun Tersedia</div>
+                <div>✅ 2.3rb+ Sewa Sukses</div>
+                <div>⭐ 4.9/5 Rating</div>
+            </div>
+        </div>
+
+        <!-- FILTER DAN PENCARIAN -->
+        <div class="filter-section">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">Semua Akun</button>
+                <button class="filter-btn" data-filter="premium">Premium 🔥</button>
+                <button class="filter-btn" data-filter="murah">Under 20K</button>
+                <button class="filter-btn" data-filter="evo">Evo/Dragon</button>
+            </div>
+            <div class="search-box">
+                <input type="text" class="search-input" id="searchInput" placeholder="Cari akun (ID, level, skin...)">
+            </div>
+        </div>
+
+        <!-- LIST AKUN FREE FIRE DENGAN GAMBAR -->
+        <div class="account-grid" id="accountGrid">
+            <!-- AKUN 1 - PREMIUM EVO DRAGON -->
+            <div class="account-card" data-category="premium evo">
+                <div class="account-badge premium">🔥 PREMIUM</div>
+                <div class="account-image">
+                    <img src="https://i.ibb.co/ZV9rQ0P/ff-account-1.jpg" alt="Akun Free Fire Premium" onerror="this.src='https://via.placeholder.com/400x200/1e2e44/ffffff?text=🔥+EVO+DRAGON'; this.classList.add('default-fallback');">
+                    <div class="account-level">🏆 Level 75</div>
+                </div>
+                <div class="account-details">
+                    <div class="account-title">
+                        <span class="account-name">Evo Dragon Set</span>
+                        <span class="account-verified">✓ Verified</span>
+                    </div>
+                    <div class="account-specs">
+                        <span class="spec-item">💎 4500+ Diamond</span>
+                        <span class="spec-item">🎭 58 Skin</span>
+                        <span class="spec-item">🐉 Evo Dragon</span>
+                        <span class="spec-item">🏅 Grandmaster</span>
+                        <span class="spec-item">🎯 M1887 - Relic</span>
+                        <span class="spec-item">👑 Elite Pass S39</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="price">
+                            <span class="price-label">Sewa per Hari</span>
+                            <span class="price-value">Rp 45.000<small>/hari</small></span>
+                        </div>
+                        <!-- NOMOR WA BARU: 085775243570 -> 6285775243570 🥵⚡ -->
+                        <a href="https://wa.me/6285775243570?text=Halo%20saya%20mau%20sewa%20akun%20FF%20Evo%20Dragon%20Set%20-%20Rp45.000%2Fhari%20(Level%2075)%0AID%20Akun%3A%20EVODRG2879" class="btn-sewa" target="_blank">
+                            💬 Sewa via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AKUN 2 - MURAH RANK HIGH -->
+            <div class="account-card" data-category="murah">
+                <div class="account-badge">⭐ POPULER</div>
+                <div class="account-image">
+                    <img src="https://i.ibb.co/f2cX7cQ/ff-account-2.jpg" alt="Akun Free Fire Murah" onerror="this.src='https://via.placeholder.com/400x200/0f1a26/ffffff?text=⭐+RANK+HIGH';">
+                    <div class="account-level">🏆 Level 67</div>
+                </div>
+                <div class="account-details">
+                    <div class="account-title">
+                        <span class="account-name">Heroic Rank Push</span>
+                        <span class="account-verified">✓ Siap Push</span>
+                    </div>
+                    <div class="account-specs">
+                        <span class="spec-item">💎 1200 Diamond</span>
+                        <span class="spec-item">🎭 32 Skin</span>
+                        <span class="spec-item">🔫 SCAR - Blood</span>
+                        <span class="spec-item">🏅 Heroic</span>
+                        <span class="spec-item">📦 Pet Lv.5</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="price">
+                            <span class="price-label">Sewa per Hari</span>
+                            <span class="price-value">Rp 18.000<small>/hari</small></span>
+                        </div>
+                        <!-- NOMOR WA BARU: 085775243570 -> 6285775243570 🥵⚡ -->
+                        <a href="https://wa.me/6285775243570?text=Halo%20saya%20mau%20sewa%20akun%20FF%20Heroic%20Rank%20-%20Rp18.000%2Fhari%20(Level%2067)%0AID%20Akun%3A%20HRNK2390" class="btn-sewa" target="_blank">
+                            💬 Sewa via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AKUN 3 - BUNDLE LEGENDARY -->
+            <div class="account-card" data-category="premium">
+                <div class="account-badge premium">💎 LENGENDARY</div>
+                <div class="account-image">
+                    <img src="https://i.ibb.co/vw7Y8G0/ff-account-3.jpg" alt="Akun Free Fire Bundle Legend" onerror="this.src='https://via.placeholder.com/400x200/1a2c3a/ffffff?text=💎+BUNDLE+LEGEND';">
+                    <div class="account-level">🏆 Level 80</div>
+                </div>
+                <div class="account-details">
+                    <div class="account-title">
+                        <span class="account-name">Bundle Chrono + Wukong</span>
+                        <span class="account-verified">✓ Rare</span>
+                    </div>
+                    <div class="account-specs">
+                        <span class="spec-item">💎 7800+ Diamond</span>
+                        <span class="spec-item">🎭 84 Skin</span>
+                        <span class="spec-item">⏳ Chrono Lv.7</span>
+                        <span class="spec-item">🐒 Wukong</span>
+                        <span class="spec-item">🏅 Grandmaster</span>
+                        <span class="spec-item">🎀 Bundle Fame</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="price">
+                            <span class="price-label">Sewa per Hari</span>
+                            <span class="price-value">Rp 65.000<small>/hari</small></span>
+                        </div>
+                        <!-- NOMOR WA BARU: 085775243570 -> 6285775243570 🥵⚡ -->
+                        <a href="https://wa.me/6285775243570?text=Halo%20saya%20mau%20sewa%20akun%20FF%20Bundle%20Chrono%20Wukong%20-%20Rp65.000%2Fhari%20(Level%2080)%0AID%20Akun%3A%20CHRONO789" class="btn-sewa" target="_blank">
+                            💬 Sewa via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AKUN 4 - EVO SABER / MUDAH NAIK -->
+            <div class="account-card" data-category="evo murah">
+                <div class="account-badge">⚡ BEST DEAL</div>
+                <div class="account-image">
+                    <img src="https://i.ibb.co/KLp5JbP/ff-account-4.jpg" alt="Akun Free Fire Evo Saber" onerror="this.src='https://via.placeholder.com/400x200/162b36/ffffff?text=⚡+EVO+SABER';">
+                    <div class="account-level">🏆 Level 70</div>
+                </div>
+                <div class="account-details">
+                    <div class="account-title">
+                        <span class="account-name">Evo Saber M192</span>
+                        <span class="account-verified">✓ Push Rank</span>
+                    </div>
+                    <div class="account-specs">
+                        <span class="spec-item">💎 2300 Diamond</span>
+                        <span class="spec-item">🎭 41 Skin</span>
+                        <span class="spec-item">⚔️ Evo Saber</span>
+                        <span class="spec-item">🏅 Diamond</span>
+                        <span class="spec-item">🔰 Pet Lv.4</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="price">
+                            <span class="price-label">Sewa per Hari</span>
+                            <span class="price-value">Rp 25.000<small>/hari</small></span>
+                        </div>
+                        <!-- NOMOR WA BARU: 085775243570 -> 6285775243570 🥵⚡ -->
+                        <a href="https://wa.me/6285775243570?text=Halo%20saya%20mau%20sewa%20akun%20FF%20Evo%20Saber%20-%20Rp25.000%2Fhari%20(Level%2070)%0AID%20Akun%3A%20EVOSBR22" class="btn-sewa" target="_blank">
+                            💬 Sewa via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AKUN 5 - AKUN PREMIUM BANYAK SKIN -->
+            <div class="account-card" data-category="premium">
+                <div class="account-badge premium">👑 LIMITED</div>
+                <div class="account-image">
+                    <img src="https://i.ibb.co/3WQF3k0/ff-account-5.jpg" alt="Akun Free Fire Kolektor" onerror="this.src='https://via.placeholder.com/400x200/1f3a48/ffffff?text=👑+COLLECTOR';">
+                    <div class="account-level">🏆 Level 82</div>
+                </div>
+                <div class="account-details">
+                    <div class="account-title">
+                        <span class="account-name">Collector Set • DJ Alok</span>
+                        <span class="account-verified">✓ 200+ skin</span>
+                    </div>
+                    <div class="account-specs">
+                        <span class="spec-item">💎 12.500 Diamond</span>
+                        <span class="spec-item">🎭 112 Skin</span>
+                        <span class="spec-item">🎧 DJ Alok</span>
+                        <span class="spec-item">💀 K. JOKER</span>
+                        <span class="spec-item">🏅 Heroic</span>
+                        <span class="spec-item">🐉 Dragon AK</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="price">
+                            <span class="price-label">Sewa per Hari</span>
+                            <span class="price-value">Rp 85.000<small>/hari</small></span>
+                        </div>
+                        <!-- NOMOR WA BARU: 085775243570 -> 6285775243570 🥵⚡ -->
+                        <a href="https://wa.me/6285775243570?text=Halo%20saya%20mau%20sewa%20akun%20FF%20Collector%20Alok%20-%20Rp85.000%2Fhari%20(Level%2082)%0AID%20Akun%3A%20ALOK888" class="btn-sewa" target="_blank">
+                            💬 Sewa via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AKUN 6 - AKUN MURAH UNTUK COBA-COBA -->
+            <div class="account-card" data-category="murah">
+                <div class="account-badge">🎯 NEW</div>
+                <div class="account-image">
+                    <img src="https://i.ibb.co/KVQvDp9/ff-account-6.jpg" alt="Akun Free Fire Starter" onerror="this.src='https://via.placeholder.com/400x200/1a2e3c/ffffff?text=🎯+STARTER+PAKET';">
+                    <div class="account-level">🏆 Level 45</div>
+                </div>
+                <div class="account-details">
+                    <div class="account-title">
+                        <span class="account-name">Starter Paket • Skin 20+</span>
+                        <span class="account-verified">✓ Murah</span>
+                    </div>
+                    <div class="account-specs">
+                        <span class="spec-item">💎 550 Diamond</span>
+                        <span class="spec-item">🎭 22 Skin</span>
+                        <span class="spec-item">🔫 M1014</span>
+                        <span class="spec-item">🏅 Platinum</span>
+                        <span class="spec-item">🐶 Pet Lv.3</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="price">
+                            <span class="price-label">Sewa per Hari</span>
+                            <span class="price-value">Rp 12.000<small>/hari</small></span>
+                        </div>
+                        <!-- NOMOR WA BARU: 085775243570 -> 6285775243570 🥵⚡ -->
+                        <a href="https://wa.me/6285775243570?text=Halo%20saya%20mau%20sewa%20akun%20FF%20Starter%20Paket%20-%20Rp12.000%2Fhari%20(Level%2045)%0AID%20Akun%3A%20STARTER45" class="btn-sewa" target="_blank">
+                            💬 Sewa via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INSTRUKSI SEWA -->
+        <div class="how-it-works">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h4>Pilih Akun</h4>
+                <p>Cari akun FF yang cocok dengan kebutuhanmu dari list di atas</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h4>Klik "Sewa via WA"</h4>
+                <p>Otomatis redirect ke WhatsApp Admin, format pesan sudah terisi</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h4>Bayar & Login</h4>
+                <p>Admin akan kirim ID & password setelah pembayaran diverifikasi</p>
+            </div>
+        </div>
+
+        <!-- FOOTER - NOMOR JUGA DIUPDATE 🥵 -->
+        <div class="footer">
+            <div>⚡ RagilRent • Sewa Akun Free Fire Premium • 2879</div>
+            <div>📞 Kontak: 0857-7524-3570</div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT UNTUK FILTER & PENCARIAN -->
+    <script>
+        // Filter dan search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const searchInput = document.getElementById('searchInput');
+            const accountCards = document.querySelectorAll('.account-card');
+            
+            // Filter berdasarkan kategori
+            function filterAccounts(filterValue, searchTerm = '') {
+                accountCards.forEach(card => {
+                    const category = card.dataset.category || '';
+                    const cardText = card.innerText.toLowerCase();
+                    
+                    let matchFilter = false;
+                    
+                    if (filterValue === 'all') {
+                        matchFilter = true;
+                    } else if (filterValue === 'premium' && category.includes('premium')) {
+                        matchFilter = true;
+                    } else if (filterValue === 'murah' && category.includes('murah')) {
+                        matchFilter = true;
+                    } else if (filterValue === 'evo' && category.includes('evo')) {
+                        matchFilter = true;
+                    } else {
+                        matchFilter = filterValue === 'all';
+                    }
+                    
+                    const matchSearch = searchTerm === '' || cardText.includes(searchTerm.toLowerCase());
+                    
+                    if (matchFilter && matchSearch) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Event listener untuk filter button
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filterValue = this.dataset.filter;
+                    filterAccounts(filterValue, searchInput.value);
+                });
+            });
+            
+            // Event listener untuk search
+            searchInput.addEventListener('input', function() {
+                const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+                filterAccounts(activeFilter, this.value);
+            });
+            
+            // Set default gambar jika gambar tidak load
+            const images = document.querySelectorAll('.account-image img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    this.onerror = null;
+                    this.src = 'https://via.placeholder.com/400x200/1e3a4a/ffffff?text=🎮+AKUN+FF+READY';
+                }
+            });
+        });
+    </script>
+    
+    <!-- FALLBACK IMAGE VIA PLACEHOLDER -->
+    <div style="display: none;">Image fallback siap</div>
+</body>
+</html>
